@@ -25,8 +25,9 @@ const EditModel =()=>{
         setName(currentUser?.name);
         setUsername(currentUser?.username);
         setBio(currentUser?.bio);
+        console.log("setthe item")
 
-    },[currentUser]);
+    },[currentUser?.name,currentUser?.profileImage,currentUser?.coverImage,currentUser?.username,currentUser?.bio]);
 
     const [isLoading , setIsLoading] = useState(false);
 
@@ -42,9 +43,10 @@ const EditModel =()=>{
             });
             mutateFetchedUser();
 
-            toast.success('updated')
+            toast.success('updated');
+            editModel.onClose();
         } catch (error) {
-            toast.error('somethings went wrong');     
+            toast.error('amar went.. went wrong');     
         }
         finally{
             setIsLoading(false);

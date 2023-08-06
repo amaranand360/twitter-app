@@ -16,18 +16,18 @@ const Sidebar = () => {
 
   const items =[
 {
-  lebel :'Home',
+  label :'Home',
   href:"/",
   icon: AiTwotoneHome
 },
 {
-  lebel:'Notifaction',
+  label:'Notifaction',
   href:'/notification',
   icon: BsBellFill,
   auth:true
 },
 {
-  lebel:'Profile',
+  label:'Profile',
   href:`/users/${currentUser?.id}`,
   icon: FaUser,
   auth:true
@@ -44,13 +44,13 @@ const Sidebar = () => {
            <Sidebaritem 
            key={item.href}
            href={item.href}
-           lebel={item.lebel}
+           label={item.label}
            icon={item.icon}
            auth={item.auth}
            /> 
            ))}
            { currentUser && (
-           < Sidebaritem onClick={()=>signOut() } icon={BiLogOut} lebel="Logout" href="/" />
+           < Sidebaritem onClick={()=>signOut() } icon={BiLogOut} label="Logout" href="/" />
            )}
           <SidebarTweetButton />
         </div>

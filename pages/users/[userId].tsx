@@ -32,7 +32,7 @@ const Userview = ()=> {
   return (
     <>
 
-      <Header showBackArrow lebel="User Profile" />
+      <Header showBackArrow label="User Profile" />
       <UserHero userId={userId as string} />
       <UserBio  userId={userId as string} />
     </>
