@@ -5,7 +5,7 @@ import { useCallback } from "react";
 import { IconType } from "react-icons";
 
 interface SidebaritemProps{
-  lebel:string; 
+  label:string; 
   href?: string;
   icon: IconType
   onClick?:()=> void;
@@ -15,7 +15,7 @@ interface SidebaritemProps{
  
 
 const Sidebaritem:React.FC<SidebaritemProps> = ({
-  lebel,
+  label,
   href,
   icon:Icon, 
   onClick,
@@ -71,7 +71,7 @@ const Sidebaritem:React.FC<SidebaritemProps> = ({
       ">
         <Icon size={24} color="white" />
         <p className="hidden lg:block text-white text-xl">
-        {lebel}
+        {label}
         </p>
       </div>
     </div>

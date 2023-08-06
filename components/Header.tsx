@@ -3,11 +3,11 @@ import { useCallback } from "react";
 import { BiArrowBack } from "react-icons/bi";
 
 interface HeaderProps{
-    lebel:string;
+    label:string;
     showBackArrow:boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({lebel,showBackArrow}) => {
+const Header: React.FC<HeaderProps> = ({label,showBackArrow}) => {
 
 
     const router = useRouter();
@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({lebel,showBackArrow}) => {
             />
         )
         }
-        <h1 className="text-white text-xl font-semibold">{lebel}</h1>
+        <h1 className="text-white text-xl font-semibold">{label}</h1>
         </div>
     </div>
   )
