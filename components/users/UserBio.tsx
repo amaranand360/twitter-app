@@ -29,9 +29,6 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
         return format(new Date(fetchedUser.createdAt), 'MMMM yyyy');
     }, [fetchedUser?.createdAt]);
 
-    // console.log('currentuser->',currentUser?.id);
-    // console.log('userid->',userId);
-
     return (
         <div className="border-b-[1px] border-neutral-800 pb-4">
             <div className="flex justify-end p-2">

@@ -25,7 +25,6 @@ const EditModel =()=>{
         setName(currentUser?.name);
         setUsername(currentUser?.username);
         setBio(currentUser?.bio);
-        console.log("setthe item")
 
     },[currentUser?.name,currentUser?.profileImage,currentUser?.coverImage,currentUser?.username,currentUser?.bio]);
 
