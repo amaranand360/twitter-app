@@ -8,6 +8,7 @@ import useUser from "@/hooks/useUser";
 import Button from "../Button";
 
 import useEditModel from '@/hooks/useEditModel';
+import useFollow from '@/hooks/useFollow';
 
 interface UserBioProps {
     userId: string;
@@ -19,6 +20,8 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
     const { data: fetchedUser } = useUser(userId);
 
     const editModel = useEditModel();
+
+    const {isFollowing , toggleFollow } = useFollow(userId)
 
     const createdAt = useMemo(() => {
 
@@ -36,9 +39,10 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
                 <Button secondary label="Edit" onClick={editModel.onOpen} />
                 ) :(
                 <Button
-                    secondary
-                    label="Follow"
-                    onClick={() => { }}
+                onClick={toggleFollow}
+                label={isFollowing ? 'Unfollow': 'Follow'} 
+                secondary = {!isFollowing}
+                outline={isFollowing}
                 />
                 )}
             </div>

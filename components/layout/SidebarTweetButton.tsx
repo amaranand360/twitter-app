@@ -42,7 +42,7 @@ const SidebarTweetButton= ()=> {
       hover:bg-opacity-90
       cursor-pointer
 
-">
+    ">
         <p 
         className="
         hidden

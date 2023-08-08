@@ -1,6 +1,6 @@
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModel from "@/hooks/useLoginModel";
-import usePosts from "@/hooks/usePost";
+import usePosts from "@/hooks/usePosts";
 import useRegisterModal from "@/hooks/useRegisterModel";
 import axios from "axios";
 import { useCallback, useState } from "react";

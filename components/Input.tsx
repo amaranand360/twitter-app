@@ -21,7 +21,7 @@ const Input:React.FC<InputProps> = ({
       type={type}
       className="
       w-full
-      p-4
+      p-3
       text-lg
       bg-black
       border-2

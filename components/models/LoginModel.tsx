@@ -45,7 +45,7 @@ const LoginModel = ()=> {
       }, [loginModel, registerModal])
 
     const bodyContent=(
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
             
         <Input
         placeholder="Email"
