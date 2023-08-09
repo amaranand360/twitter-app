@@ -1,13 +1,13 @@
+import Form from "@/components/Form";
 import  Header from "@/components/Header";
+import PostFeed from "@/components/posts/PostFeed";
 
 export default function Home() {
   return (
     <>
-     < Header showBackArrow= {true}  label="Home"/>
-    <div className="text-3xl text-sky-500 ">
-    hello Amar@allright reserve 
-
-    </div>
+       <Header showBackArrow= {true}  label="Home"/>
+       <Form placeholder="what's going on ?....." />
+       <PostFeed />
     </>
   )
   
