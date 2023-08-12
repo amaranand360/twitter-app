@@ -26,7 +26,7 @@ const PostView = ()=>{
             <Form
              postId={postId as string}
              isComment
-             placeholder="Post your reply"
+             placeholder="Post your reply here !"
              />
         </div>
     );

@@ -4,7 +4,7 @@ import fetcher from "@/libs/fetcher";
 
 
 const usePosts = (userId?: string)=> {
-    const url = userId ? `/api/posts?userId-${userId}` : '/api/posts';
+    const url = userId ? `/api/posts?userId=${userId}` : '/api/posts';
     const {
         data, 
         error,
@@ -18,6 +18,6 @@ const usePosts = (userId?: string)=> {
         isLoading,
         mutate
     }
-}
+};
 
 export default usePosts;

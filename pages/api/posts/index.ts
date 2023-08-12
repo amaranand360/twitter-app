@@ -40,7 +40,7 @@ export default async function handler (
                     },
                     orderBy:{
                         createdAt:'desc'
-                    }
+                    },
                 });
             }
             else{

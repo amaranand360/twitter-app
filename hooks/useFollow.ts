@@ -26,8 +26,7 @@ const useFollow = (userId: string) => {
     try {
       let request;
       if (isFollowing) {
-        console.log('userid->',userId)
-        request = () => axios.delete(`/api/follow`, { data: { userId } });
+        request = () => axios.delete(`/api/follow`, { data: { userId }  });
       } else {
         request = () => axios.post("/api/follow", { userId });
       }
@@ -40,7 +39,7 @@ const useFollow = (userId: string) => {
       toast.success(`success`);
     } catch (error) {
       console.log(error);
-      toast.error("Something went wrong");
+      toast.error(`${error}`);
     }
   }, [
     currentUser,
