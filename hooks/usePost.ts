@@ -2,9 +2,9 @@ import useSWR  from "swr";
 
 import fetcher from "@/libs/fetcher";
 
-
 const usePost = (postId: string)=> {
     const url = postId ? `/api/posts/${postId}` : null ;
+    console.log('url->',url);
     const {
         data, 
         error,

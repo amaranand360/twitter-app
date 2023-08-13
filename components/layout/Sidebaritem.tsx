@@ -1,8 +1,10 @@
-import useCurrentUser from "@/hooks/useCurrentUser";
-import useLoginModel from "@/hooks/useLoginModel";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { IconType } from "react-icons";
+import { BsDot } from "react-icons/bs";
+
+import useCurrentUser from "@/hooks/useCurrentUser";
+import useLoginModel from "@/hooks/useLoginModel";
 
 interface SidebaritemProps{
   label:string; 
@@ -10,6 +12,7 @@ interface SidebaritemProps{
   icon: IconType
   onClick?:()=> void;
   auth?:boolean;
+  alert?:boolean;
 
 }
  
@@ -19,7 +22,8 @@ const Sidebaritem:React.FC<SidebaritemProps> = ({
   href,
   icon:Icon, 
   onClick,
-  auth
+  auth,
+  alert
  }) => {
   const loginModel = useLoginModel();
   const { data: currentUser } = useCurrentUser();
@@ -56,6 +60,7 @@ const Sidebaritem:React.FC<SidebaritemProps> = ({
       lg:hidden
       ">
         <Icon size={28}  color="white" />
+        {alert ? <BsDot className="text-sky-500 absolute top-28" size={70}   style={{ left: `7%` }}/> : null }
       </div>
       <div className="
       relavite
@@ -69,10 +74,11 @@ const Sidebaritem:React.FC<SidebaritemProps> = ({
       hover:bg-opacity-10
       cursor-pointer
       ">
-        <Icon size={24} color="white" />
+        <Icon size={22} color="white" />
         <p className="hidden lg:block text-white text-xl">
         {label}
         </p>
+        {alert ? <BsDot className="text-sky-500 absolute top-28" size={70}  style={{ left: `8%` }} /> : null }
       </div>
     </div>
   );

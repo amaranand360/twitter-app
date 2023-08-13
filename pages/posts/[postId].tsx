@@ -1,17 +1,19 @@
-import Form from "@/components/Form";
-import Header from "@/components/Header";
-import PostIteam from "@/components/posts/PostItem";
-import usePost from "@/hooks/usePost";
 import { useRouter } from "next/router";
 import { ClipLoader } from "react-spinners";
 
-const PostView = ()=>{
+import usePost from "@/hooks/usePost";
+
+import Header from "@/components/Header";
+import Form from "@/components/Form";
+import PostIteam from "@/components/posts/PostItem";
+import CommentFeed from "@/components/posts/CommentFeed";
+
+const PostView = () => {
     const router = useRouter();
     const { postId } = router.query;
 
-    const {data: fetchedPost , isLoading} = usePost(postId as string);
-
-    if(isLoading || !fetchedPost) {
+    const { data: fetchedPost, isLoading } = usePost(postId as string);
+    if (isLoading || !fetchedPost) {
         return (
             <div className="flex justify-center items-center h-full">
                 <ClipLoader color="lightblue" size={80} />
@@ -19,15 +21,16 @@ const PostView = ()=>{
         )
     }
 
-    return(
+    return (
         <div>
-            <Header label="Post" showBackArrow />
+            <Header showBackArrow label="Replay" />
             <PostIteam data={fetchedPost} />
             <Form
-             postId={postId as string}
-             isComment
-             placeholder="Post your reply here !"
-             />
+                postId={postId as string}
+                isComment
+                placeholder="Commit your reply !"
+            />
+            <CommentFeed comments={fetchedPost?.comments} />
         </div>
     );
 }
