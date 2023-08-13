@@ -1,5 +1,5 @@
-import serverAuth from "@/libs/serverAuth";
 import { NextApiRequest, NextApiResponse } from "next";
+import serverAuth from "@/libs/serverAuth";
 import prisma from "@/libs/prismadb";
 
 export default async function handler(
@@ -36,7 +36,9 @@ export default async function handler(
         }
 
         if(req.method === 'DELETE'){
-            updatedFollowingIds = updatedFollowingIds.filter((followingId) => followingId !== userId);
+            updatedFollowingIds = 
+                updatedFollowingIds
+                .filter(followingId => followingId !== userId);
         }
         
         const updatedUser = await prisma.user.update(
