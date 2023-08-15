@@ -16,7 +16,7 @@ const SidebarTweetButton = () => {
     } else {
       router.push("/");
     }
-  }, [loginModel]);
+  }, [loginModel,currentUser]);
 
   return (
     <div onClick={onclick}>

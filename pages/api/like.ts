@@ -11,10 +11,11 @@ export default async function handler(
   }
 
   try {
-    const { postId } = req.body;
+    // const { postId } = req.body;
+    const postId = req.method === 'POST' ? req.body.postId : req.query.postId;
+
 
     const { currentUser } = await serverAuth(req, res);
-    console.log('postid ->',postId);
     if (!postId ||  typeof postId !== 'string') {
       throw new Error("Invalid postId");
     }
@@ -68,7 +69,7 @@ export default async function handler(
       updatedLikedIds = updatedLikedIds.filter(
         (likedId) => likedId !== currentUser.id
       );
-      console.log('likearray',updatedLikedIds);
+
     }
 
     const updatedPost = await prisma.post.update({

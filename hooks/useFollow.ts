@@ -22,11 +22,12 @@ const useFollow = (userId: string) => {
     if (!currentUser) {
       return loginModel.onOpen();
     }
+    
 
     try {
       let request;
       if (isFollowing) {
-        request = () => axios.delete(`/api/follow`, { data: { userId }  });
+        request = () => axios.delete(`/api/follow`, { params: { userId }  });
       } else {
         request = () => axios.post("/api/follow", { userId });
       }
@@ -36,7 +37,9 @@ const useFollow = (userId: string) => {
       mutateCurrentUser();
       mutateFetchedUser();
 
-      toast.success(`success`);
+      const msg = isFollowing ? 'Unfollow Successfully':'Following Successfully';
+      toast.success(`${msg}`)
+
     } catch (error) {
       console.log(error);
       toast.error('Something went wrong');
