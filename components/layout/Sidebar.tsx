@@ -20,8 +20,8 @@ const Sidebar = () => {
   icon: AiTwotoneHome
 },
 {
-  label:'Notifaction',
-  href:'/notification',
+  label:'Notifactions',
+  href:'/notifications',
   icon: BsBellFill,
   auth:true,
   alert:currentUser?.hasNotification,

@@ -14,7 +14,7 @@ export default async function handler(
         const {userId } = req.query;
 
         if ( !userId || typeof userId !== 'string'){
-            throw new Error('Invalid post Id');
+            throw new Error('Invalid user Id');
         }
 
         const notifications = await prisma.post.findMany({

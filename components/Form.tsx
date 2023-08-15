@@ -20,7 +20,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   const loginModel = useLoginModel();
 
   const { data: currentUser } = useCurrentUser();
-  const { mutate: mutatePosts } = usePosts(postId as string);
+  const { mutate: mutatePosts } = usePosts();
   const {mutate: mutatePost} = usePost(postId as string)
 
   const [body, setBody] = useState("");
@@ -106,8 +106,10 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 font-bold
                 "
           >
-            <strong>🌟 Wellcome to Social Meadia App! 🚀</strong>
-            <small>This site Creted for eduction perpous</small>
+           <strong>🌟 Wellcome to Social Meadia App! 🚀</strong>
+            <p className="text-neutral-300  text-center m-2">Created by Amar Kumar</p>
+            <p className="text-neutral-500  text-center text-sm">This site is made for educational purposes only</p>
+
           </h1>
           <div className="flex flex-row items-center justify-center gap-4">
             <Button label="Login" onClick={loginModel.onOpen} />
@@ -115,6 +117,8 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
           </div>
         </div>
       )}
+      
+
     </div>
   );
 };

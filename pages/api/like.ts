@@ -44,7 +44,7 @@ export default async function handler(
         if (post?.userId) {
           await prisma.notification.create({
             data: {
-              body: 'Someone liked your tweet',
+              body: 'Someone liked your post!',
               userId:post.userId
             }
           });
@@ -68,7 +68,9 @@ export default async function handler(
       updatedLikedIds = updatedLikedIds.filter(
         (likedId) => likedId !== currentUser.id
       );
+      console.log('likearray',updatedLikedIds);
     }
+
     const updatedPost = await prisma.post.update({
       where: {
         id: postId,

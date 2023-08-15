@@ -13,15 +13,16 @@ const NotificationsFeed =() =>{
     },[mutateCurrentUser])
 
     if(fetchedNotifications.length === 0){
-        return (
+         (
             <div className="text-neutral-600 text-center p-6 text-xl">
             No notifications    
             </div>
         )
     }
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-yellow-50">
         {fetchedNotifications.map((notification:Record<string,any>)=>{
+        {console.log(notification);}
             <div
             key={notification.id} 
             className="
@@ -34,9 +35,10 @@ const NotificationsFeed =() =>{
             bordre-neutral-800
             ">
             <BsTwitter color="white" size={32} />
-            <p>
+            <p className="text-white">
             {notification.body}
             </p>
+            <p>yrdftghhhhhhhhhhhhhhhyj</p>
             </div>
         })}
 
@@ -45,4 +47,4 @@ const NotificationsFeed =() =>{
   )
 }
 
-export default NotificationsFeed
+export default NotificationsFeed;

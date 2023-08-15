@@ -26,8 +26,9 @@ return {
 const Notifications = ()=>{
     return(
        <>
-       <Header label="Notification" showBackArrow/>
+       <Header label="Notifications" showBackArrow/>
        <NotificationsFeed />
+       
        </>
     )
 }
