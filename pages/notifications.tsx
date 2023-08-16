@@ -23,14 +23,14 @@ return {
 }
 
 }
-const Notifications = ()=>{
+ const Notifications = ()=>{
     return(
        <>
        <Header label="Notifications" showBackArrow/>
        <NotificationsFeed />
-       
        </>
     )
 }
 
 export default Notifications;
+

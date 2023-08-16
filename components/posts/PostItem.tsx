@@ -7,14 +7,14 @@ import useLoginModel from '@/hooks/useLoginModel';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import useLike from '@/hooks/useLike';
 
-
 import Avatar from '../Avatar';
+
 interface PostItemProps {
   data: Record<string, any>;
   userId?: string;
 }
 
-const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
+const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
   const router = useRouter();
   const loginModal = useLoginModel();
 
@@ -23,7 +23,7 @@ const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
 
   const goToUser = useCallback((ev: any) => {
     ev.stopPropagation();
-    router.push(`/users/${data.user?.id}`)
+    router.push(`/users/${data.user.id}`)
   }, [router, data.user?.id]);
 
   const goToPost = useCallback(() => {

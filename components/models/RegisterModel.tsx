@@ -24,7 +24,7 @@ const RegisterModel = ()=> {
 
     registerModal.onClose();
     loginModel.onOpen();
-  }, [loginModel, registerModal,isLoading])
+  }, [loginModel, registerModal])
 
 
     const onSubmit = useCallback(async ()=>{
