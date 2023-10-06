@@ -114,7 +114,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       } else {
         posts = await prisma.post.findMany({
           include: {
-            user: false,
+            user: true,
             comments: true,
           },
           orderBy: {
