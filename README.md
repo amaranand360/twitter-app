@@ -21,6 +21,20 @@ Welcome to **my Social Media App**, a platform built with Next.js, React.js, Tai
 - **Responsive Design:** A mobile-friendly interface for users on various devices.
 - **Profile Management:** Update profile information and avatar.
 
+## Tech Stack
+
+- **Frontend:** 
+  - [Next.js](https://nextjs.org/) 🚀
+  - [React.js](https://reactjs.org/) ⚛️
+  - [Tailwind CSS](https://tailwindcss.com/) 🎨
+
+- **Backend:** 
+  - [Prisma](https://www.prisma.io/) 🛠️
+  - [MongoDB](https://www.mongodb.com/) 📊
+
+- **Other Tools:**
+  - [Node.js](https://nodejs.org/) 🚀
+  - [npm](https://www.npmjs.com/) 📦
 ## Getting Started
 
 ### Prerequisites
