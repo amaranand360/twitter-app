@@ -35,6 +35,7 @@ Welcome to **my Social Media App**, a platform built with Next.js, React.js, Tai
 - **Other Tools:**
   - [Node.js](https://nodejs.org/) 🚀
   - [npm](https://www.npmjs.com/) 📦
+
 ## Getting Started
 
 ### Prerequisites
