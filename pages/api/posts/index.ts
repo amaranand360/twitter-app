@@ -84,7 +84,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const post = await prisma.post.create({
         data: {
           body,
-          userId: currentUser.id
+          // userId: currentUser.id,
+          user: { connect: { id: currentUser.id } },
         }
       });
 
@@ -104,7 +105,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             userId
           },
           include: {
-            user: true,
+            user: userId ? true : false,
             comments: true
           },
           orderBy: {
